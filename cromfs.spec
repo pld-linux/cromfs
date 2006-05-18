@@ -1,4 +1,5 @@
 Summary:	Compressed ROM filesystem for Linux in user-space
+Summary(pl):	System plików Compressed ROM dla Linuksa dzia³aj±cy w przestrzeni u¿ytkownika
 Name:		cromfs
 Version:	1.1.1
 Release:	0.1
@@ -24,6 +25,21 @@ does he need to wait while the system decompresses 500 files from a
 
 The creation of cromfs was inspired from Squashfs and Cramfs.
 
+%description -l pl
+cromfs to kompresowany system plików tylko do odczytu dla Linuksa.
+Jest przeznaczony do trwa³ego archiwizowania gigabajtów du¿ych plików
+o du¿ej redundancji.
+
+Je¶li chodzi o kompresjê, jest bardzo podobny do plików 7-zip, ale z
+mo¿liwo¶ci± dostêpu praktycznie w czasie rzeczywistym (choæ du¿o
+wolniejszym, ni¿ w przypadku wiêkszo¶ci innych systemów plików) do
+ca³ej zawarto¶ci archiwum; u¿ytkownik nie musi uruchamiaæ programu do
+dekompresji pojedynczego pliku ani czekaæ na zdekompresowanie 500
+plików z 1000-plikowego archiwum, aby uzyskaæ 1 po¿±dany plik.
+
+Stworzenie cromfs by³o zainspirowane systemami plików squashfs i
+cramfs.
+
 %prep
 %setup -q
 
@@ -34,10 +50,10 @@ The creation of cromfs was inspired from Squashfs and Cramfs.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT%{_bindir}
-install  cromfs-driver $RPM_BUILD_ROOT%{_bindir}
-install  util/mkcromfs $RPM_BUILD_ROOT%{_bindir}
+
+install cromfs-driver $RPM_BUILD_ROOT%{_bindir}
+install util/mkcromfs $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
