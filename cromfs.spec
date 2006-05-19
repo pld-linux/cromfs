@@ -9,6 +9,7 @@ Source0:	http://bisqwit.iki.fi/src/arch/%{name}-%{version}.tar.bz2
 # Source0-md5:	8c83b5ed2ea6cbc85e65ea88528ecd31
 URL:		http://bisqwit.iki.fi/source/cromfs.html
 BuildRequires:	libfuse-devel
+BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
