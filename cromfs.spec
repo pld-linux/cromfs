@@ -1,12 +1,12 @@
 Summary:	Compressed ROM filesystem for Linux in user-space
 Summary(pl):	System plików Compressed ROM dla Linuksa dzia³aj±cy w przestrzeni u¿ytkownika
 Name:		cromfs
-Version:	1.1.6.1
+Version:	1.2.0
 Release:	0.1
 License:	GPL
 Group:		Applications
 Source0:	http://bisqwit.iki.fi/src/arch/%{name}-%{version}.tar.bz2
-# Source0-md5:	361b4c6109590ba4356136e96338a414
+# Source0-md5:	b7172972c50649c1916d54910f781535
 URL:		http://bisqwit.iki.fi/source/cromfs.html
 BuildRequires:	libfuse-devel
 BuildRequires:	libstdc++-devel
@@ -50,13 +50,16 @@ cramfs.
 	CFLAGS="%{rpmcflags}" \
 	CXXFLAGS="%{rpmcflags}"
 
+%{__make} test
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
 
-install cromfs-driver $RPM_BUILD_ROOT%{_bindir}
-install util/mkcromfs $RPM_BUILD_ROOT%{_bindir}
+install cromfs-driver   $RPM_BUILD_ROOT%{_bindir}
+install util/mkcromfs   $RPM_BUILD_ROOT%{_bindir}
 install util/unmkcromfs $RPM_BUILD_ROOT%{_bindir}
+install util/cvcromfs   $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
