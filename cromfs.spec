@@ -1,5 +1,5 @@
 Summary:	Compressed ROM filesystem for Linux in user-space
-Summary(pl.UTF-8):   System plików Compressed ROM dla Linuksa działający w przestrzeni użytkownika
+Summary(pl.UTF-8):	System plików Compressed ROM dla Linuksa działający w przestrzeni użytkownika
 Name:		cromfs
 Version:	1.2.0
 Release:	0.1
