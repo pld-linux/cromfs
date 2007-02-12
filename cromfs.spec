@@ -1,5 +1,5 @@
 Summary:	Compressed ROM filesystem for Linux in user-space
-Summary(pl):	System plików Compressed ROM dla Linuksa dzia³aj±cy w przestrzeni u¿ytkownika
+Summary(pl.UTF-8):   System plikÃ³w Compressed ROM dla Linuksa dziaÅ‚ajÄ…cy w przestrzeni uÅ¼ytkownika
 Name:		cromfs
 Version:	1.2.0
 Release:	0.1
@@ -26,19 +26,19 @@ does he need to wait while the system decompresses 500 files from a
 
 The creation of cromfs was inspired from Squashfs and Cramfs.
 
-%description -l pl
-cromfs to kompresowany system plików tylko do odczytu dla Linuksa.
-Jest przeznaczony do trwa³ego archiwizowania gigabajtów du¿ych plików
-o du¿ej redundancji.
+%description -l pl.UTF-8
+cromfs to kompresowany system plikÃ³w tylko do odczytu dla Linuksa.
+Jest przeznaczony do trwaÅ‚ego archiwizowania gigabajtÃ³w duÅ¼ych plikÃ³w
+o duÅ¼ej redundancji.
 
-Je¶li chodzi o kompresjê, jest bardzo podobny do plików 7-zip, ale z
-mo¿liwo¶ci± dostêpu praktycznie w czasie rzeczywistym (choæ du¿o
-wolniejszym, ni¿ w przypadku wiêkszo¶ci innych systemów plików) do
-ca³ej zawarto¶ci archiwum; u¿ytkownik nie musi uruchamiaæ programu do
-dekompresji pojedynczego pliku ani czekaæ na zdekompresowanie 500
-plików z 1000-plikowego archiwum, aby uzyskaæ 1 po¿±dany plik.
+JeÅ›li chodzi o kompresjÄ™, jest bardzo podobny do plikÃ³w 7-zip, ale z
+moÅ¼liwoÅ›ciÄ… dostÄ™pu praktycznie w czasie rzeczywistym (choÄ‡ duÅ¼o
+wolniejszym, niÅ¼ w przypadku wiÄ™kszoÅ›ci innych systemÃ³w plikÃ³w) do
+caÅ‚ej zawartoÅ›ci archiwum; uÅ¼ytkownik nie musi uruchamiaÄ‡ programu do
+dekompresji pojedynczego pliku ani czekaÄ‡ na zdekompresowanie 500
+plikÃ³w z 1000-plikowego archiwum, aby uzyskaÄ‡ 1 poÅ¼Ä…dany plik.
 
-Stworzenie cromfs by³o zainspirowane systemami plików squashfs i
+Stworzenie cromfs byÅ‚o zainspirowane systemami plikÃ³w squashfs i
 cramfs.
 
 %prep
