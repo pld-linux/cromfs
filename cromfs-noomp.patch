@@ -1,0 +1,14 @@
+--- cromfs-1.5.6.2/util/unmkcromfs.cc.orig	2008-12-16 21:19:59.000000000 +0100
++++ cromfs-1.5.6.2/util/unmkcromfs.cc	2009-01-15 21:21:12.814458885 +0100
+@@ -105,7 +105,11 @@
+         beginline();
+     #endif
+     }
++    #ifdef _OPENMP
+     void endthread(int threadno = omp_get_thread_num())
++    #else
++    void endthread(int threadno = 0)
++    #endif
+     {
+     #ifdef _OPENMP
+         lines.erase(threadno);
