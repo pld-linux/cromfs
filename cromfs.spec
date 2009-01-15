@@ -7,6 +7,7 @@ License:	GPL v3
 Group:		Applications/System
 Source0:	http://bisqwit.iki.fi/src/arch/%{name}-%{version}.tar.bz2
 # Source0-md5:	11b76b8ace6cffaff6e58edceea17d9f
+Patch0:		%{name}-noomp.patch
 URL:		http://bisqwit.iki.fi/source/cromfs.html
 BuildRequires:	libfuse-devel >= 0:2.5.2
 BuildRequires:	libstdc++-devel
@@ -45,10 +46,12 @@ cramfs.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 ./configure
 %{__make} \
+	CC="%{__cc}" \
 	CPP="%{__cpp}" \
 	CXX="%{__cxx}" \
 	CFLAGS="%{rpmcflags}" \
