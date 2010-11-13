@@ -1,16 +1,21 @@
 Summary:	Compressed ROM filesystem for Linux in user-space
 Summary(pl.UTF-8):	System plików Compressed ROM dla Linuksa działający w przestrzeni użytkownika
 Name:		cromfs
-Version:	1.5.6.2
+Version:	1.5.9
 Release:	0.1
 License:	GPL v3
 Group:		Applications/System
 Source0:	http://bisqwit.iki.fi/src/arch/%{name}-%{version}.tar.bz2
-# Source0-md5:	11b76b8ace6cffaff6e58edceea17d9f
-Patch0:		%{name}-noomp.patch
+# Source0-md5:	9e2067c72a9edf80b232c624f0a7432e
+Patch0:		%{name}-c32.patch
+Patch1:		%{name}-libc.patch
 URL:		http://bisqwit.iki.fi/source/cromfs.html
 BuildRequires:	libfuse-devel >= 0:2.5.2
+%if "%{cc_version}" >= "4.2"
+BuildRequires:	libgomp-devel
+%endif
 BuildRequires:	libstdc++-devel
+BuildRequires:	lzo-devel >= 2
 BuildRequires:	rpmbuild(macros) >= 1.167
 Requires:	libfuse >= 0:2.5.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -47,6 +52,7 @@ cramfs.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 ./configure
@@ -77,4 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc doc/ChangeLog doc/FORMAT README.html
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/cromfs-driver
+%attr(755,root,root) %{_bindir}/cvcromfs
+%attr(755,root,root) %{_bindir}/mkcromfs
+%attr(755,root,root) %{_bindir}/unmkcromfs

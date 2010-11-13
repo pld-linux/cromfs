@@ -1,0 +1,10 @@
+--- cromfs-1.5.9/util/unmkcromfs.cc.orig	2009-12-17 09:44:32.000000000 +0100
++++ cromfs-1.5.9/util/unmkcromfs.cc	2010-11-13 10:26:48.243099937 +0100
+@@ -22,6 +22,7 @@
+ #ifdef HAS_LUTIMES
+  #include <sys/time.h>
+ #endif
++#include <sys/stat.h>
+ 
+ #include <getopt.h>
+ 

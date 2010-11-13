@@ -1,0 +1,10 @@
+--- cromfs-1.5.9/lib/newhash.cc.orig	2009-12-17 09:44:32.000000000 +0100
++++ cromfs-1.5.9/lib/newhash.cc	2010-11-13 10:12:45.163105804 +0100
+@@ -296,6 +296,7 @@
+    }
+ #else
+     uint_least32_t a,b;
++    typedef uint_least32_t c32;
+     unsigned long len = size;
+     c += size + UINT32_C(0x9e3779b9); // 2^32 / ((1+sqrt(5))/2
+     a = b = c;
