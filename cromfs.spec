@@ -2,7 +2,7 @@ Summary:	Compressed ROM filesystem for Linux in user-space
 Summary(pl.UTF-8):	System plików Compressed ROM dla Linuksa działający w przestrzeni użytkownika
 Name:		cromfs
 Version:	1.5.10.1
-Release:	0.1
+Release:	1
 License:	GPL v3
 Group:		Applications/System
 Source0:	http://bisqwit.iki.fi/src/arch/%{name}-%{version}.tar.bz2
