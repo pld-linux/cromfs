@@ -1,13 +1,14 @@
 Summary:	Compressed ROM filesystem for Linux in user-space
 Summary(pl.UTF-8):	System plików Compressed ROM dla Linuksa działający w przestrzeni użytkownika
 Name:		cromfs
-Version:	1.5.10.1
+Version:	1.5.10.2
 Release:	1
 License:	GPL v3
 Group:		Applications/System
-Source0:	http://bisqwit.iki.fi/src/arch/%{name}-%{version}.tar.bz2
-# Source0-md5:	19085af9785dcf007138a959612c254c
-URL:		http://bisqwit.iki.fi/source/cromfs.html
+#Source0Download: https://bisqwit.iki.fi/source/cromfs.html#download
+Source0:	https://bisqwit.iki.fi/src/arch/%{name}-%{version}.tar.bz2
+# Source0-md5:	5d69ebd1959e0b7273148d7bac84084b
+URL:		https://bisqwit.iki.fi/source/cromfs.html
 BuildRequires:	libfuse-devel >= 0:2.5.2
 %if "%{cc_version}" >= "4.2"
 BuildRequires:	libgomp-devel
@@ -15,7 +16,7 @@ BuildRequires:	libgomp-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	lzo-devel >= 2
 BuildRequires:	rpmbuild(macros) >= 1.167
-Requires:	libfuse >= 0:2.5.2
+Requires:	libfuse-tools >= 2.5.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -58,11 +59,9 @@ cramfs.
 	CXX="%{__cxx}" \
 	CFLAGS="%{rpmcflags}" \
 	CXXFLAGS="%{rpmcxxflags}" \
-	OPTIM="%{rpmcflags}" \
-	PROGS="cromfs-driver util/mkcromfs util/unmkcromfs util/cvcromfs"
+	OPTIM="%{rpmcflags}"
 
-%{__make} test \
-	PROGS="cromfs-driver util/mkcromfs util/unmkcromfs util/cvcromfs"
+%{__make} test
 
 %install
 rm -rf $RPM_BUILD_ROOT
